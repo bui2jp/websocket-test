@@ -21,6 +21,8 @@ class MyWebSocket {
         console.log('ws_open : ' + event);
         //myWSObject.ws_send(probeData);
         setInterval(()=>{
+            probeData.lng = probeData.lng + 0.0001;
+            console.log('probeData.lng:' + probeData.lng);
             myWSObject.ws_send(probeData);
         },100)
     }
@@ -55,9 +57,10 @@ class MyWebSocket {
 const myWSObject = new MyWebSocket();
 
 var probeData = {
-    id: "testid",
-    lat: 35.123,
-    lng: 137.123,
+    id: "testid2",
+    //tokyo 皇居 139.754023, 35.684861
+    lat: 35.684861,
+    lng: 139.754023,
     time: null,
     callback:false
 }
